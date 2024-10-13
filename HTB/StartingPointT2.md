@@ -44,13 +44,15 @@ Using nmap to scan target:
 
 Access the website through the machine IP:
 
-![image](https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_1.png?raw=true)
+
 
 With the hint from all above questions, this will be a SQL injection task:
 
 I try input username: `admin' #` and password can be anything.
 
-<img src="HackmdWriteup/HTB/StartingPointT2_img/c1_10_2.png" alt="c1)_10_2">
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_1.png?raw=true" alt="image">
+</div>
 
 After pressed login, it redirect to this page:
 
