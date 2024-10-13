@@ -62,8 +62,8 @@ After pressed login, it redirect to this page:
 
 ### Task 11: Submit root flag
 
-### 🟢 Success
-Flag: `e3d0796d002a446c0e622226f42e9672`
+#### Flag:
+    e3d0796d002a446c0e622226f42e9672
 
 
 ---
@@ -74,14 +74,82 @@ Flag: `e3d0796d002a446c0e622226f42e9672`
 
 ---
 
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_e.png?raw=true" alt="image">
+</div>
+
 ---
 
 ## Machine: Sequel
 
-### Task 1: During our scan, which port do we find serving MySQL?
+### Task 1 During our scan, which port do we find serving MySQL?
 
 <div align="center">
   <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_1.png?raw=true" alt="image">
 </div>
 
+We have found that the port is `3306` and run service named ` 5.5.5-10.3.27-MariaDB-0+deb10u1`
     A: 3306
+### Task 2 What community-developed MySQL version is the target running?
+    A: MariaDB
+### Task 3 When using the MySQL command line client, what switch do we need to use in order to specify a login username?
+
+#### Note: 
+To connect to database we need to install `mysql` or `mariadb` on local machine:
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_3.png?raw=true" alt="image">
+</div>
+
+    A: -u
+### Task 4 Which username allows us to log into this MariaDB instance without providing a password?
+    A: root
+### Task 5 In SQL, what symbol can we use to specify within the query that we want to display everything inside a table?
+    A: *
+### Task 6 In SQL, what symbol do we need to end each query with?
+    A: ;
+### Task 7 There are three databases in this MySQL instance that are common across all MySQL instances. What is the name of the fourth that's unique to this host?
+
+Connect to database:
+
+Use: `mysql -h {target ip} -u {user}` add option `--skip-ssl` if you encounter error `ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not support it`
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_7_1.png?raw=true" alt="image">
+</div>
+
+
+Use: 
+    `show databases;` to show all database
+    `use {database};` to use the database
+    `show tables;` to show all tables
+    `select * from {table}` to display all table contents
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_7_2.png?raw=true" alt="image">
+</div>
+
+The three common databases accross all MySQL instance are: `information_schema, mysql , performance_schema` and the `htb` is the table w need
+
+    A: htb
+
+### Task 8 Submit root flag
+#### Flag:
+    7b4bec00d1a39e3dd4e021ec3d915da8
+
+
+---
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_f.png?raw=true" alt="image">
+</div>
+
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_8.png?raw=true" alt="image">
+</div>
+---
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_e.png?raw=true" alt="image">
+</div>
+---
