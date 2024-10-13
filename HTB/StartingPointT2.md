@@ -89,6 +89,7 @@ After pressed login, it redirect to this page:
 </div>
 
 We have found that the port is `3306` and run service named ` 5.5.5-10.3.27-MariaDB-0+deb10u1`
+
     A: 3306
 ### Task 2 What community-developed MySQL version is the target running?
     A: MariaDB
@@ -120,6 +121,7 @@ Use: `mysql -h {target ip} -u {user}` add option `--skip-ssl` if you encounter e
 
 
 Use: 
+
     `show databases;` to show all database
     `use {database};` to use the database
     `show tables;` to show all tables
@@ -134,15 +136,18 @@ The three common databases accross all MySQL instance are: `information_schema, 
     A: htb
 
 ### Task 8 Submit root flag
+
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_f.png?raw=true" alt="image">
+</div>
+
+
 #### Flag:
     7b4bec00d1a39e3dd4e021ec3d915da8
 
 
 ---
-
-<div align="center">
-  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_f.png?raw=true" alt="image">
-</div>
 
 
 <div align="center">
