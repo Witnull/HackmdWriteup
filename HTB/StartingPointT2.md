@@ -62,9 +62,9 @@ After pressed login, it redirect to this page:
 
 ### Task 11: Submit root flag
 
-:::success
-Flag: e3d0796d002a446c0e622226f42e9672
-:::
+### 🟢 Success
+Flag: `e3d0796d002a446c0e622226f42e9672`
+
 
 ---
 
