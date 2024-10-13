@@ -44,17 +44,17 @@ Using nmap to scan target:
 
 Access the website through the machine IP:
 
-![image](https://raw.githubusercontent.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_1.png)
+![image](HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_1.png)
 
 With the hint from all above questions, this will be a SQL injection task:
 
 I try input username: `admin' #` and password can be anything.
 
-![image](https://raw.githubusercontent.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_2.png)
+![image](HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_2.png)
 
 After pressed login, it redirect to this page:
 
-![image](https://raw.githubusercontent.com/Witnull/HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
+![image](HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
 
     A: Congratulations
 
@@ -66,7 +66,7 @@ Flag: e3d0796d002a446c0e622226f42e9672
 
 ---
 
-![image](https://raw.githubusercontent.com/Witnull/HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
+![image](HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
 
 ---
 
@@ -76,6 +76,6 @@ Flag: e3d0796d002a446c0e622226f42e9672
 
 ### Task 1: During our scan, which port do we find serving MySQL?
 
-![image](https://raw.githubusercontent.com/Witnull/HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
+![image](HackmdWriteup/HTB/StartingPointT2_img/c1_f.png)
 
     A: 3306
