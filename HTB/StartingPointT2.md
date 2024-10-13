@@ -25,17 +25,17 @@ Using nmap to scan target:
 ### Task 10: If user input is not handled carefully, it could be interpreted as a comment. Use a comment to login as admin without knowing the password. What is the first word on the webpage returned?
 Access the website through the machine IP:
 
-![image](https://hackmd.io/_uploads/rkOV3zgyJl.png)
+![image](HackmdWriteup\HTB\StartingPointT2_img\c1_10_1.png)
 
 With the hint from all above questions, this will be a SQL injection task:
 
 I try input username: `admin' #` and password can be anything.
 
-![image](https://hackmd.io/_uploads/Hk-MhzeJyg.png)
+![image](HackmdWriteup\HTB\StartingPointT2_img\c1_10_2.png)
 
 After pressed login, it redirect to this page:
 
-![image](https://hackmd.io/_uploads/S1inaMl1kg.png)
+![image](HackmdWriteup\HTB\StartingPointT2_img\c1_f.png)
 
     A: Congratulations
 
@@ -45,7 +45,7 @@ After pressed login, it redirect to this page:
 :::
 ---
 
-![image](https://hackmd.io/_uploads/B1RvCfgyyl.png)
+![image](HackmdWriteup\HTB\StartingPointT2_img\c1_f.png)
 
 ---
 ---
@@ -54,7 +54,7 @@ After pressed login, it redirect to this page:
 
 ### Task 1: During our scan, which port do we find serving MySQL?
 
-![image](https://hackmd.io/_uploads/rJ5d3UYJ1g.png)
+![image](HackmdWriteup\HTB\StartingPointT2_img\c1_f.png)
 
     A: 3306
 
