@@ -44,8 +44,6 @@ Using nmap to scan target:
 
 Access the website through the machine IP:
 
-
-
 With the hint from all above questions, this will be a SQL injection task:
 
 I try input username: `admin' #` and password can be anything.
@@ -56,7 +54,9 @@ I try input username: `admin' #` and password can be anything.
 
 After pressed login, it redirect to this page:
 
-<img src="HackmdWriteup/HTB/StartingPointT2_img/c1_f.png" alt="c1_f">
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_10_2.png?raw=true" alt="image">
+</div>
 
     A: Congratulations
 
@@ -68,7 +68,9 @@ Flag: e3d0796d002a446c0e622226f42e9672
 
 ---
 
-<img src="HackmdWriteup/HTB/StartingPointT2_img/c1_f.png" alt="c1_e">
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c1_f.png?raw=true" alt="image">
+</div>
 
 ---
 
@@ -78,6 +80,8 @@ Flag: e3d0796d002a446c0e622226f42e9672
 
 ### Task 1: During our scan, which port do we find serving MySQL?
 
-<img src="HackmdWriteup/HTB/StartingPointT2_img/c1_f.png" alt="c2_1">
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_1.png?raw=true" alt="image">
+</div>
 
     A: 3306
