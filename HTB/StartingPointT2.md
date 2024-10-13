@@ -129,20 +129,22 @@ Use:
   <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_7_2.png?raw=true" alt="image">
 </div>
 
-The three common databases accross all MySQL instance are: `information_schema, mysql , performance_schema` and the `htb` is the table w need
+The three common databases accross all MySQL instance are: `information_schema, mysql , performance_schema` and the `htb` is the table we need
 
     A: htb
 
 ### Task 8 Submit root flag
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_f.png?raw=true" alt="image">
+</div>
+
 #### Flag:
     7b4bec00d1a39e3dd4e021ec3d915da8
 
 
 ---
 
-<div align="center">
-  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_f.png?raw=true" alt="image">
-</div>
 
 
 <div align="center">
