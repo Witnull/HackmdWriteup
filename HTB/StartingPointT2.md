@@ -152,8 +152,188 @@ The three common databases accross all MySQL instance are: `information_schema, 
 <div align="center">
   <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_8.png?raw=true" alt="image">
 </div>
+
 ---
+
 <div align="center">
   <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c2_e.png?raw=true" alt="image">
 </div>
+
 ---
+
+---
+
+## Machine: Crocodile
+### Task 1
+
+What Nmap scanning switch employs the use of default scripts during a scan?
+
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_1.png?raw=true" alt="image">
+</div>
+
+
+    A: -sC
+
+### Task 2
+
+What service version is found to be running on port 21?
+
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_2.png?raw=true" alt="image">
+</div>
+
+We see that the version of the service is `vsftpd 3.0.3` and that it allow anonymous login with `FTP code 230`
+
+    A: vsftpd 3.0.3
+
+### Task 3
+
+What FTP code is returned to us for the "Anonymous FTP login allowed" message?
+
+    A: 230
+
+### Task 4
+
+After connecting to the FTP server using the ftp client, what username do we provide when prompted to log in anonymously?
+
+As suggest above from the ftp we will use:
+
+    A: anonymous
+
+### Task 5
+
+After connecting to the FTP server anonymously, what command can we use to download the files we find on the FTP server?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_4.png?raw=true" alt="image">
+</div>
+
+    A: get
+
+### Task 6
+
+What is one of the higher-privilege sounding usernames in 'allowed.userlist' that we download from the FTP server?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_5.png?raw=true" alt="image">
+</div>
+
+After downloaded the files, using `cat` will show the list of allowed users and we see that there an `admin` user that seems to be the highest privilige. We also see the password of `admin` is seems to `rKXM59ESxesUFHAd`
+
+    A: admin
+
+### Task 7
+
+What version of Apache HTTP Server is running on the target host?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_6.png?raw=true" alt="image">
+</div>
+
+    A: Apache httpd 2.4.41
+
+### Task 8
+
+What switch can we use with Gobuster to specify we are looking for specific filetypes?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_7.png?raw=true" alt="image">
+</div>
+
+    A: -x
+
+### Task 9
+
+Which PHP file can we identify with directory brute force that will provide the opportunity to authenticate to the web service?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_8.png?raw=true" alt="image">
+</div>
+
+Webpage on this ip. If there is a webpage, and using PHP as the question suggest, there might be `login.php`
+
+    A: login.php
+
+Attempt to login with the credentials above 
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_8_2.png?raw=true" alt="image">
+</div>
+
+### Submit Flag
+
+Submit root flag
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_f.png?raw=true" alt="image">
+</div>
+
+We successfull access `admin` dashboard
+
+#### Flag
+
+    c7110277ac44d78b6a9fff2232434d16
+
+---
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c3_e.png?raw=true" alt="image">
+</div>
+
+--- 
+
+---
+
+## Machine: Responder
+
+### Task 1
+
+When visiting the web service using the IP address, what is the domain that we are being redirected to?
+
+### Task 2
+
+Which scripting language is being used on the server to generate webpages?
+
+### Task 3
+
+What is the name of the URL parameter which is used to load different language versions of the webpage?
+
+### Task 4
+
+Which of the following values for the `page` parameter would be an example of exploiting a Local File Include (LFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe"
+
+### Task 5
+
+Which of the following values for the `page` parameter would be an example of exploiting a Remote File Include (RFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe"
+
+### Task 6
+
+What does NTLM stand for?
+
+### Task 7
+
+Which flag do we use in the Responder utility to specify the network interface?
+
+
+### Task 8
+
+There are several tools that take a NetNTLMv2 challenge/response and try millions of passwords to see if any of them generate the same response. One such tool is often referred to as `john`, but the full name is what?.
+
+
+
+### Task 9
+
+What is the password for the administrator user?
+
+### Task 10
+
+We'll use a Windows service (i.e. running on the box) to remotely access the Responder machine using the password we recovered. What port TCP does it listen on?
+
+### Submit Flag
+
+Submit root flag
+
+#### Flag
